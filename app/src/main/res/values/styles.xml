@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:buttonStyle">@style/CustomButton</item>
+        <item name="android:radioButtonStyle">@style/CustomRadioButton</item>
+        <item name="android:fontFamily">@font/roboto</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay">
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay">
+    </style>
+
+    <style name="CustomButton">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@drawable/button_design</item>
+    </style>
+
+    <style name="CustomRadioButton">
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/radio_button_background</item>
+        <item name="android:button">@null</item>
+    </style>
+</resources>

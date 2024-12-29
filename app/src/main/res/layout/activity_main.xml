@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/startmenu_layout"
+    android:background="@drawable/gradient_vertical_half"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/app_bar"
+        android:fitsSystemWindows="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="?actionBarSize"
+            app:layout_collapseMode="pin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/guideline3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_bar">
+
+        <TextView
+            android:textSize="50.0sp"
+            android:textColor="@color/check_button_inverted"
+            android:id="@+id/textViewEquals"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" = "
+            android:fontFamily="@font/roboto"
+            app:layout_constraintStart_toEndOf="@id/tickerViewB"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.robinhood.ticker.TickerView
+            android:textSize="50.0sp"
+            android:textColor="@color/check_button_inverted"
+            android:id="@+id/tickerViewB"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" 7"
+            app:layout_constraintStart_toEndOf="@id/tickerViewOP"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.robinhood.ticker.TickerView
+            android:textSize="50.0sp"
+            android:typeface="monospace"
+            android:textColor="@color/check_button_inverted"
+            android:id="@+id/tickerViewOP"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            app:layout_constraintStart_toEndOf="@id/tickerViewA2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.robinhood.ticker.TickerView
+            android:textSize="50.0sp"
+            android:textColor="@color/check_button_inverted"
+            android:id="@+id/tickerViewA2"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 "
+            app:layout_constraintStart_toEndOf="@id/tickerViewA1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.robinhood.ticker.TickerView
+            android:textSize="50.0sp"
+            android:typeface="monospace"
+            android:textColor="@color/check_button_inverted"
+            android:id="@+id/tickerViewA1"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:fontFamily="monospace"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.robinhood.ticker.TickerView
+            android:textSize="50.0sp"
+            android:textColor="@color/check_button_inverted"
+            android:id="@+id/tickerViewR2"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            app:layout_constraintStart_toEndOf="@id/tickerViewR1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.robinhood.ticker.TickerView
+            android:textSize="50.0sp"
+            android:typeface="monospace"
+            android:textColor="@color/check_button_inverted"
+            android:id="@+id/tickerViewR1"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:fontFamily="monospace"
+            app:layout_constraintStart_toEndOf="@id/textViewEquals"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="horizontal"
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:orientation="vertical"
+        android:id="@+id/vertical_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <Button
+        android:id="@+id/button"
+        android:paddingLeft="@dimen/button_icon_padding"
+        android:paddingRight="@dimen/button_icon_padding"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/button_margin"
+        android:layout_marginRight="@dimen/button_margin"
+        android:text="PLAY"
+        android:drawableLeft="@drawable/ic_baseline_play_arrow_24"
+        android:drawablePadding="@dimen/button_margin"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        style="@style/CustomButton"
+        app:layout_constraintBottom_toTopOf="@id/buttonStats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline"
+        app:layout_constraintTop_toTopOf="@id/guideline3" />
+
+    <Button
+        android:id="@+id/buttonEndless"
+        android:paddingLeft="@dimen/button_icon_padding"
+        android:paddingRight="@dimen/button_icon_padding"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/button_margin"
+        android:layout_marginRight="@dimen/button_margin"
+        android:text="Endless"
+        android:drawableLeft="@drawable/ic_baseline_loop_24"
+        android:drawablePadding="@dimen/button_margin"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        style="@style/CustomButton"
+        app:layout_constraintBottom_toTopOf="@id/buttonLeaderboard"
+        app:layout_constraintEnd_toStartOf="@id/vertical_guideline"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline3" />
+
+    <Button
+        android:id="@+id/buttonLeaderboard"
+        android:paddingLeft="@dimen/button_icon_padding"
+        android:paddingRight="@dimen/button_icon_padding"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/button_margin"
+        android:layout_marginRight="@dimen/button_margin"
+        android:text="Ranking"
+        android:drawableLeft="@drawable/ic_baseline_leaderboard_24"
+        android:drawablePadding="@dimen/button_margin"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        style="@style/CustomButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/vertical_guideline"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonEndless" />
+
+    <Button
+        android:id="@+id/buttonStats"
+        android:paddingLeft="@dimen/button_icon_padding"
+        android:paddingRight="@dimen/button_icon_padding"
+        android:layout_width="0.0dip"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/button_margin"
+        android:layout_marginRight="@dimen/button_margin"
+        android:text="Stats"
+        android:drawableLeft="@drawable/ic_statssign"
+        android:drawablePadding="@dimen/button_margin"
+        android:layout_marginStart="@dimen/button_margin"
+        android:layout_marginEnd="@dimen/button_margin"
+        style="@style/CustomButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/vertical_guideline"
+        app:layout_constraintTop_toBottomOf="@id/button" />
+
+    <TextView
+        android:id="@+id/belowBottomHelper"
+        android:layout_width="wrap_content"
+        android:layout_height="20.0dip"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

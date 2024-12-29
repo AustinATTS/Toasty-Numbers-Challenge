@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="button_icon_padding">20dp</dimen>
+    <dimen name="button_margin">10dp</dimen>
+    <dimen name="button_corner_radius">200dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>
