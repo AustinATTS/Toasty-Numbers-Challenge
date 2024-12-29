@@ -9,6 +9,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:resizeableActivity="false"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
             android:name=".StatsActivity"
             android:exported="false"
             android:theme="@style/AppTheme" />
@@ -20,16 +27,17 @@
             android:exported="false" />
         <activity
             android:name=".EndlessActivity"
-            android:screenOrientation="fullSensor"
-            android:windowSoftInputMode="adjustResize"
             android:exported="false"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:screenOrientation="fullSensor"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

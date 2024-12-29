@@ -41,6 +41,10 @@ class MainActivity : AppCompatActivity() {
             navigateToActivity(StatsActivity::class.java)
         }
 
+        binding.buttonSettings.setOnClickListener {
+            navigateToActivity(SettingsActivity::class.java)
+        }
+
         // Initialize TickerViews
         tickerViewA1 = findViewById(R.id.tickerViewA1)
         tickerViewA2 = findViewById(R.id.tickerViewA2)

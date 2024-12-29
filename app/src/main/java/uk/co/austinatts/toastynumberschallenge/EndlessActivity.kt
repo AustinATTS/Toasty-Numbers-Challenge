@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -73,6 +74,13 @@ class EndlessActivity : AppCompatActivity() {
             // Add behavior when "NEXT" button is clicked
         }
 
-        // More setup or interaction logic as required for your app
+        // Find the button by its ID
+        val backButton = findViewById<ImageButton>(R.id.eback_button)
+
+        // Set an OnClickListener for the back button
+        backButton.setOnClickListener {
+            // Finish the current activity and return to the MainActivity
+            finish()
+        }
     }
 }
