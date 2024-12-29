@@ -1,10 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".EndlessActivity">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:id="@+id/eapp_bar"
+        android:fitsSystemWindows="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/etoolbar"
+            android:layout_width="fill_parent"
+            android:layout_height="?actionBarSize"
+            app:layout_collapseMode="pin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutSolvedEqs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/button_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/eapp_bar">
+        <TextView android:textSize="25.0sp" android:textStyle="bold" android:textColor="@color/training_color" android:id="@+id/solved_eqs_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Solved Equations: " app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <TextView android:textSize="32.0sp" android:textColor="@color/training_color" android:id="@+id/textViewSolvedCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/button_margin" android:text="9" android:fontFamily="@font/segment7" app:layout_constraintBaseline_toBaselineOf="@id/solved_eqs_text" app:layout_constraintStart_toEndOf="@id/solved_eqs_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/constraintLayoutEquation" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/constraintLayoutSolvedEqs">
+        <com.robinhood.ticker.TickerView android:textSize="50.0sp" android:textColor="@color/training_color" android:id="@+id/etickerViewB" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" 3" app:layout_constraintStart_toEndOf="@id/etickerViewOP" app:layout_constraintTop_toTopOf="parent" />
+        <com.robinhood.ticker.TickerView android:textSize="50.0sp" android:typeface="monospace" android:textColor="@color/training_color" android:id="@+id/etickerViewOP" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-" app:layout_constraintStart_toEndOf="@id/etickerViewA2" app:layout_constraintTop_toTopOf="parent" />
+        <com.robinhood.ticker.TickerView android:textSize="50.0sp" android:textColor="@color/training_color" android:id="@+id/etickerViewA2" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1 " app:layout_constraintStart_toEndOf="@id/etickerViewA1" app:layout_constraintTop_toTopOf="parent" />
+        <com.robinhood.ticker.TickerView android:textSize="50.0sp" android:typeface="monospace" android:textColor="@color/training_color" android:id="@+id/etickerViewA1" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1" android:fontFamily="monospace" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <TextView android:textSize="50.0sp" android:textColor="@color/training_color" android:id="@+id/etextViewEquals" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=" = " android:fontFamily="@font/roboto" app:layout_constraintStart_toEndOf="@id/etickerViewB" app:layout_constraintTop_toTopOf="parent" />
+        <EditText android:textSize="50.0sp" android:textColor="@color/training_color" android:id="@+id/editTextNumber" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:cursorVisible="false" android:ems="2" android:maxLength="2" android:inputType="number" android:fontFamily="@font/roboto" app:layout_constraintStart_toEndOf="@id/textViewEquals" app:layout_constraintTop_toTopOf="@id/textViewEquals" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <Button android:id="@+id/buttonNext" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="NEXT" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/constraintLayoutEquation" />
+    <androidx.constraintlayout.widget.Guideline android:orientation="vertical" android:id="@+id/guideline2" android:layout_width="wrap_content" android:layout_height="wrap_content" app:layout_constraintGuide_percent="0.5" />
+    <ImageView android:id="@+id/imageViewPause" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" android:layout_marginRight="@dimen/button_margin" android:layout_marginEnd="@dimen/button_margin" app:layout_constraintBottom_toTopOf="@id/constraintLayoutEquation" app:layout_constraintDimensionRatio="1:1" app:layout_constraintEnd_toEndOf="parent" app:srcCompat="@drawable/ic_pause" />
+    <View android:id="@+id/errorBackgroundTraining" android:background="#ffff0000" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="0.0dip" android:alpha="0.7" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+    <ImageView android:id="@+id/errorSignTraining" android:visibility="gone" android:layout_width="200.0dip" android:layout_height="200.0dip" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:srcCompat="@drawable/ic_cross_24" />
+    <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="@color/check_button_inverted" android:id="@+id/correctAnswerText" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Correct Answer: 12" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/errorSignTraining" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -139,11 +139,11 @@ class MainActivity : AppCompatActivity() {
 
         // Update TickerViews with animations
         tickerViewA1.text = if (a1 == 0) " " else "$a1"
-        tickerViewA2.text = "$a2 "
+        tickerViewA2.text = "$a2"
         tickerViewOP.text = " $operator "
-        tickerViewB.text = " $b"
+        tickerViewB.text = "$b"
         tickerViewR1.text = if (r1 == 0) " " else "$r1"
-        tickerViewR2.text = "$r2 "
+        tickerViewR2.text = "$r2"
 
         // Repeat the update after a delay
         tickerViewA1.postDelayed({

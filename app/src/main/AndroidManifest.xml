@@ -20,7 +20,10 @@
             android:exported="false" />
         <activity
             android:name=".EndlessActivity"
-            android:exported="false" />
+            android:screenOrientation="fullSensor"
+            android:windowSoftInputMode="adjustResize"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
