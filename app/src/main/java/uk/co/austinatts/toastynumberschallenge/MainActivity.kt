@@ -152,6 +152,6 @@ class MainActivity : AppCompatActivity() {
         // Repeat the update after a delay
         tickerViewA1.postDelayed({
             updateEquation()
-        }, 5000) // 2 seconds delay
+        }, 3500) // 2 seconds delay
     }
 }
